@@ -20,21 +20,40 @@ def vis_alle():
 
 
 def legg_til():
-
     navn = input("Skriv inn navn: ")
-
     nummer = input("Skriv inn nummer: ")
 
     ny_person = {
-
         "navn": navn,
-
         "nummer": nummer
-
     }
 
     telefonbok.append(ny_person)
-
     print(f"{navn} ble lagt til i telefonboka.")
-vis_alle()
-legg_til()
+
+
+while True:
+    print("\n--- TELEFONBOK ---")
+    print("1. Vis alle")
+    print("2. Legg til ny")
+    print("3. Søk")
+    print("4. Avslutt")
+
+    valg = input("Skriv inn 1, 2, 3 eller 4: ")
+
+    if valg == "1":
+        vis_alle()
+
+    elif valg == "2":
+        legg_til()
+
+    elif valg == "3":
+        print("Søk er ikke laget ennå.")
+
+    elif valg == "4":
+        print("Programmet avsluttes.")
+        break
+
+    else:
+        print("Ugyldig valg. Skriv inn 1, 2, 3 eller 4.")
+
